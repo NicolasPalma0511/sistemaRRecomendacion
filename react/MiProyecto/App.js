@@ -14,7 +14,7 @@ function HomeScreen({ navigation }) {
   const [paginaActual, setPaginaActual] = useState(1);
 
   useEffect(() => {
-    fetch('http://web:5000/partituras')
+    fetch(process.env.REACT_APP_API_URL + '/partituras')
       .then(response => response.json())
       .then(data => setSheets(data))
       .catch(error => console.error(error));
