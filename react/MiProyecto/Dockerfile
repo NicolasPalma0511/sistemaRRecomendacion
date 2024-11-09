@@ -13,4 +13,4 @@ COPY . .
 EXPOSE 19000 19001 19002 3000
 
 # Comando de inicio de Expo
-CMD ["npx", "expo", "start", "--tunnel"]
+CMD ["npx", "expo", "start", "--host", "0.0.0.0", "--tunnel"]
