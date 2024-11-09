@@ -14,4 +14,4 @@ RUN pip install -r requirements.txt
 EXPOSE 5000
 
 # Ejecuta la aplicación Flask
-CMD ["python", "app.py"]
+CMD ["python", "recommender.py"]
