@@ -5,6 +5,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DetailScreen from './DetailScreen';
 import dotenv from 'dotenv';
+import { REACT_APP_API_URL } from '@env';
+
 
 const Stack = createStackNavigator();
 
@@ -17,12 +19,11 @@ function HomeScreen({ navigation }) {
   dotenv.config();
 
   useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL || 'http://default-url:8081';
-    fetch(`${apiUrl}/partituras`)
+    fetch(`${REACT_APP_API_URL}/partituras`)
       .then(response => response.json())
       .then(data => setSheets(data))
-      .catch(error => console.error(error));
-  }, []);  
+      .catch(error => console.error('Error fetching data:', error));
+  }, []);
 
   // Función para dividir las partituras por página
   const obtenerPartiturasPorPagina = () => {
