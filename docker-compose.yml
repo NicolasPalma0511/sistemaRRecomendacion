@@ -18,7 +18,7 @@ services:
       - "3000:3000"
       - "19002:19002"   
       - "8081:8081"      
-     env_file:
+    env_file:
       - ./react/MiProyecto/.env
     depends_on:
       - web
