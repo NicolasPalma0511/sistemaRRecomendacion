@@ -15,7 +15,7 @@ function HomeScreen({ navigation }) {
   const [paginaActual, setPaginaActual] = useState(1);
 
   useEffect(() => {
-    const apiUrl = process.env.REACT_APP_API_URL;
+    const apiUrl = 'http://ec2-3-93-213-23.compute-1.amazonaws.com:5000';
     fetch(`${apiUrl}/partituras`)
       .then(response => response.json())
       .then(data => setSheets(data))
