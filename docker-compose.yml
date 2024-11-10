@@ -16,9 +16,9 @@ services:
       context: ./react/MiProyecto
     ports:
       - "3000:3000"
+      - "19002:19002"   
+      - "8081:8081"      
     environment:
-      - REACT_APP_API_URL=${REACT_APP_API_URL}  # Usamos la variable desde el .env
+      - REACT_APP_API_URL=http://ec2-3-84-62-14.compute-1.amazonaws.com:5000
     depends_on:
       - web
-    env_file:
-      - .env  # Este archivo contiene las variables de entorno
