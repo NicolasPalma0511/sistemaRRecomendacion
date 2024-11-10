@@ -4,8 +4,6 @@ import { ScrollView } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import DetailScreen from './DetailScreen';
-import dotenv from 'dotenv';
-import { REACT_APP_API_URL } from '@env';
 
 
 const Stack = createStackNavigator();
@@ -16,10 +14,9 @@ function HomeScreen({ navigation }) {
   const [sheets, setSheets] = useState([]);
   const [paginaActual, setPaginaActual] = useState(1);
 
-  dotenv.config();
-
   useEffect(() => {
-    fetch(`${REACT_APP_API_URL}/partituras`)
+    const apiUrl = process.env.REACT_APP_API_URL;
+    fetch(`${apiUrl}/partituras`)
       .then(response => response.json())
       .then(data => setSheets(data))
       .catch(error => console.error('Error fetching data:', error));

@@ -9,6 +9,8 @@ RUN npm install --legacy-peer-deps \
 
 # Copiar el resto del código fuente y el archivo .env
 COPY . .
+ENV REACT_APP_API_URL=http://ec2-3-93-213-23.compute-1.amazonaws.com:5000
+
 
 # Exponer los puertos que utiliza Expo
 EXPOSE 19000 19001 19002 3000
