@@ -7,11 +7,9 @@ COPY package*.json ./
 RUN npm install --legacy-peer-deps \
     && npm install -g @expo/ngrok@4.1.0
 
-# Agregar ARG para las variables de entorno
-ARG REACT_APP_API_URL
-ENV REACT_APP_API_URL=${REACT_APP_API_URL}
-
+# Copiar el resto del código fuente y el archivo .env
 COPY . .
+COPY ./react/MiProyecto/.env /app/.env
 
 # Exponer los puertos que utiliza Expo
 EXPOSE 19000 19001 19002 3000
