@@ -9,7 +9,6 @@ RUN npm install --legacy-peer-deps \
 
 # Copiar el resto del código fuente y el archivo .env
 COPY . .
-COPY ./react/MiProyecto/.env /app/.env
 
 # Exponer los puertos que utiliza Expo
 EXPOSE 19000 19001 19002 3000
