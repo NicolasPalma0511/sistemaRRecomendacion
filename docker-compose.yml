@@ -5,8 +5,6 @@ services:
       context: ./app
     ports:
       - "5000:5000"
-    deploy:
-      replicas: 2
     depends_on:
       - redis
   redis:
@@ -21,8 +19,6 @@ services:
     ports:
       - "3000:3000"
       - "19002:19002"   
-      - "8081:8081"
-    deploy:
-      replicas: 2
+      - "8081:8081"      
     depends_on:
       - web
