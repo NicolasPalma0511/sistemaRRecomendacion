@@ -11,7 +11,7 @@ function DetailScreen({ route, navigation }) {
   const apiUrl = 'http://ec2-3-93-213-23.compute-1.amazonaws.com:5000';
 
   useEffect(() => {
-    fetch(`${apiUrl}+${sheetId}`)
+    fetch(`${apiUrl}/${sheetId}`)
       .then(response => {
         if (!response.ok) throw new Error('Partitura no encontrada');
         return response.json();
